@@ -1,0 +1,19 @@
+{
+  "name": "amizone",
+  "version": "0.0.0",
+  "description": "coz hostel outpass system sucks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaayushsingh/hop_fake.git"
+  },
+  "author": "Ayush Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaayushsingh/hop_fake/issues"
+  },
+  "homepage": "https://github.com/aaayushsingh/hop_fake#readme"
+}
