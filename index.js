@@ -3,6 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var request=require('request');
 
+
+app.use(express.static(__dirname+'/required/'));
 app.set('port', (process.env.PORT || 8080));
 
 app.listen(app.get('port'),function(){
