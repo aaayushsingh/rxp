@@ -19,3 +19,20 @@ app.get('/',function(req,res){
 
 
 });
+
+app.get('/ayush',function(req,res){
+
+    console.log(req.method+" request received at "+req.url);
+	res.sendFile(__dirname+'/ayush.html');
+
+
+});
+
+
+app.get('/pranav',function(req,res){
+
+    console.log(req.method+" request received at "+req.url);
+	res.sendFile(__dirname+'/pranav.html');
+
+
+});
