@@ -5,7 +5,7 @@ var request=require('request');
 
 
 app.use(express.static(__dirname+'/required/'));
-app.set('port', (8080));
+app.set('port', (process.env.PORT ||8080));
 
 app.listen(app.get('port'),function(){
 console.log("Your server is now running...");
