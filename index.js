@@ -5,10 +5,11 @@ var request=require('request');
 
 
 app.use(express.static(__dirname+'/required/'));
-app.set('port', (process.env.PORT || 8080));
+app.set('port', (8080));
 
 app.listen(app.get('port'),function(){
 console.log("Your server is now running...");
+console.log(app.get('port'));
 });
 
 app.use(bodyParser.json());
@@ -22,19 +23,3 @@ app.get('/',function(req,res){
 
 });
 
-app.get('/ayush',function(req,res){
-
-    console.log(req.method+" request received at "+req.url);
-	res.sendFile(__dirname+'/ayush.html');
-
-
-});
-
-
-app.get('/pranav',function(req,res){
-
-    console.log(req.method+" request received at "+req.url);
-	res.sendFile(__dirname+'/pranav.html');
-
-
-});
