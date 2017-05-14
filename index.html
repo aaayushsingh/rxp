@@ -1,25 +1,59 @@
-<!doctype html>
-<html ng-app="demo">
-	<head>
-		<title>Hello AngularJS</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    	<script>
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
 
-angular.module('demo', [])
-.controller('Hello', function($scope, $http) {
-    $http.get('https://sc.productrx.com/public/schema').
-        then(function(response) {
-            $scope.greeting = response.data;
-	    console.log(response.data);
-        });
+<div ng-app="myApp" ng-controller="dyf" ng-submit="submit()">
+
+<form name="userFormOne" novalidate>
+    <table>
+      <tr class="form-group" ng-repeat="x in names">
+
+        <td><label>{{ x.Field }}</label>
+        </td><td><input type="text" class="form-control" placeholder="{{x.Comment}}" required>
+        </td>
+      </tr>
+     </table>{{data}}
+    </form>
+<button ng-click="Submitt()">Submit</button>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('dyf', function($scope, $http) {
+    $http.get("http://localhost:5000/gu")
+    .then(function (response) {$scope.names = response.data;console.log(response.data);});
+
+
+	$scope.items = [];
+  	/*var urlp = "http://sc.productrx.com/public/survey/"+getDate();
+	  $scope.Submitt = function() {
+        var req = {
+ 		method: 'POST',
+ 		url: urlp,
+ 		data: { items }
+	}
+	$http(req).then(function(response){});
+
+    };*/
+
+
 });
 
-</script>
-	</head>
+/*function getDate() {
+    var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
 
-	<body>
-		<div ng-controller="Hello">
-			
-		</div>
-	</body>
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, day, month].join('-');
+};*/
+
+
+</script>
+
+</body>
 </html>
